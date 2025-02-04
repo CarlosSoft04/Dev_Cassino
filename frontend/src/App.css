@@ -1,0 +1,481 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  padding: 20px;
+  place-items: center;
+}
+
+.game-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease;
+}
+
+
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.game-card h2 {
+  color: #00ff88;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.bet-input {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.bet-input input,
+.bet-input select {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 140px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.bet-input input:focus,
+.bet-input select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.bet-input input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+  background: linear-gradient(45deg, #00ff88, #00b3ff);
+  color: #1a1a2e;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.header {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.header h1 {
+  color: #00ff88;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.balance {
+  font-size: 28px;
+  color: #00b3ff;
+  font-weight: bold;
+}
+
+.game-result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-win {
+  color: #00ff88;
+}
+
+.result-lose {
+  color: #ff4d4d;
+}
+
+@media (max-width: 768px) {
+  .games-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .header h1 {
+    font-size: 28px;
+  }
+  
+  .balance {
+    font-size: 24px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.roulette-wheel {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #e74c3c 0deg 10deg,
+    #2ecc71 10deg 20deg,
+    #000 20deg 30deg,
+    #e74c3c 30deg 40deg,
+    #2ecc71 40deg 50deg,
+    #000 50deg 60deg,
+    #e74c3c 60deg 70deg,
+    #2ecc71 70deg 80deg,
+    #000 80deg 90deg,
+    #e74c3c 90deg 100deg,
+    #2ecc71 100deg 110deg,
+    #000 110deg 120deg,
+    #e74c3c 120deg 130deg,
+    #2ecc71 130deg 140deg,
+    #000 140deg 150deg,
+    #e74c3c 150deg 160deg,
+    #2ecc71 160deg 170deg,
+    #000 170deg 180deg,
+    #e74c3c 180deg 190deg,
+    #2ecc71 190deg 200deg,
+    #000 200deg 210deg,
+    #e74c3c 210deg 220deg,
+    #2ecc71 220deg 230deg,
+    #000 230deg 240deg,
+    #e74c3c 240deg 250deg,
+    #2ecc71 250deg 260deg,
+    #000 260deg 270deg,
+    #e74c3c 270deg 280deg,
+    #2ecc71 280deg 290deg,
+    #000 290deg 300deg,
+    #e74c3c 300deg 310deg,
+    #2ecc71 310deg 320deg,
+    #000 320deg 330deg,
+    #e74c3c 330deg 340deg,
+    #2ecc71 340deg 350deg,
+    #000 350deg 360deg
+  );
+  position: relative;
+  margin: 20px auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+.roulette-wheel::before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background: #34495e;
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+  border: 5px solid #2c3e50;
+}
+
+.roulette-wheel.spinning {
+  animation: spin 3s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(var(--rotation)); }
+}
+
+.coin-flip-container {
+  perspective: 1000px;
+  margin: 20px auto;
+}
+
+.coin {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+}
+
+.coin.flipping {
+  animation: flip 3s ease-out forwards;
+}
+
+.coin-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  border: 5px solid #b8860b;
+}
+
+.coin-face.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(45deg, #ffa500, #ffd700);
+}
+
+@keyframes flip {
+  0% { transform: rotateY(0); }
+  100% { transform: rotateY(var(--flips)); }
+}
+
+/* Adicione animação para o slot machine */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.slot-symbol {
+  display: inline-block;
+  font-size: 50px;
+  animation: bounce 0.5s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Estilos para o Login */
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.login-card h1 {
+  color: #00ff88;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.game-selection {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.game-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.game-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.game-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.game-name {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+} 
+
+/* ... mantenha os estilos existentes ... */
+
+/* Estilos para a Navegação entre Jogos */
+.game-navigation {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  max-width: 600px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  font-size: 14px;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nav-button:hover {
+  background: rgba(0, 255, 136, 0.3);
+  transform: translateY(-2px);
+}
+
+.home-button {
+  background: rgba(0, 183, 255, 0.3);
+  margin-bottom: 5px;
+}
+
+.home-button:hover {
+  background: rgba(0, 183, 255, 0.5);
+}
+
+/* Ajuste o espaço para a navegação */
+.game-card {
+  margin-bottom: 100px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .game-navigation {
+    bottom: 10px;
+  }
+
+  .nav-button {
+    padding: 8px 15px;
+    font-size: 12px;
+    min-width: 100px;
+  }
+}
